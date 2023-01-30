@@ -104,13 +104,11 @@ void loop() {
     
     for (int h = 0; h < listSize - maxCount; h++) 
     {
-      accData = String(xList.get(h)) + String(", ") + String(yList.get(h)) + String(", ") + String(zList.get(h));
-      SerialBT.println(accData);
+      accData = String(xList.get(h)) + String(",") + String(yList.get(h)) + String(",") + String(zList.get(h));
+      SerialBT.print(accData);
     
     }
     
-    SerialBT.println(t2);
-    SerialBT.println(listSize);
-    SerialBT.println("Done");
+    SerialBT.println(String(t2) + "," String(listSize));
   }
 }

@@ -1,31 +1,39 @@
-<MyRoot>:
-  BoxLayout:
-    orientation: 'vertical'
+<MenuScreen>:
+  speed_label: speed_label
+
+  FloatLayout:
+    name: 'menu'
+
+    RoundedButton:
+      text: "BT"
+      on_press: root.connect()
+      
+      font_size: 32
+
+      size_hint: 75/root.window_size[0], 75/root.window_size[1]
+      pos_hint: {"x": 25/root.window_size[0], "y": 1-100/root.window_size[1]}
+
     Label:
       text: "TRK"
+
       font_size: 64
-      color: 0.92, 0.45, 0
-      size_hint: 1, 0.3
-    Button:
-      text: "Acc"
-      font_size: 32
-      size_hint: 1, 0.175
-    Button:
-      text: "Speed"
-      font_size: 32
-      size_hint: 1, 0.175
-    Button:
-      text: "Barpath"
-      font_size: 32
-      size_hint: 1, 0.175
-    BoxLayout:
-      size_hint: 1, 0.175
-      orientation: 'horizontal'
-      Button:
-        text: "H"
-        font_size: 32
-        size_hint: 0.5, 1
-      Button:
-        text: "BT"
-        font_size: 32
-        size_hint: 0.5, 1
+      size_hint: 75/root.window_size[0], 75/root.window_size[1]
+      pos_hint: {"center_x": 0.5, "y": 1-100/root.window_size[1]}
+
+      background_color: (0/255, 55/255, 110/255, 1.0)
+    
+    Label:
+      id: speed_label
+      font_size: 48
+      text: "Connect BT"
+  
+<RoundedButton@Button>
+  background_color: 0,0,0,0
+  background_normal: ''
+  canvas.before:
+    Color:
+      rgba: (0/255, 55/255, 110/255, 1.0)
+    RoundedRectangle:
+      size: self.size
+      pos: self.pos
+      radius: [38]
